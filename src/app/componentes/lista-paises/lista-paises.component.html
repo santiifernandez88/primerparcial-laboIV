@@ -1,0 +1,12 @@
+<div class="mt-5 shadow p-3 text-bg-secondary bg-opacity-50 rounded ">
+    <div class="overflow-auto border border-4 " style="height: 500px;">
+        <div *ngFor="let pais of paises">
+            <ul class="list-group">
+            <li class="list-group-item" (click)="seleccionarPais(pais.nombre)">
+            {{pais.nombre}} - <img src="{{pais.bandera}}" height="100px">  
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
