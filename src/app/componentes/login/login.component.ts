@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,11 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   email: string = "";
   password : string = "";
+  rol : string = "";
   flagError : boolean = false;
   loggedUser: string = "";
   msjError : string = "";
+  subUsuarios! : Subscription;
 
   constructor(private router: Router, public auth : AuthService) {}
 
@@ -58,5 +61,17 @@ export class LoginComponent {
   goTo(path : string)
   {
     this.router.navigate([path]);
+  }
+
+  obtenerDatosUsuario(email: string){
+    this.subUsuarios = this.auth.obtenerUsuarios().subscribe((mensaje) =>{
+    mensaje.forEach(usuario => {
+        if((usuario as any).email == email){
+          this.email = (usuario as any).email;
+          this.password = (usuario as any).password;
+          this.rol = (usuario as any).rol;
+        }
+      })
+    })
   }
 }

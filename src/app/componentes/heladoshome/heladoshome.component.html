@@ -1,0 +1,46 @@
+<body>
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4">Helados</span>
+          </a>
+        </header>
+  
+        <div class="p-1 mb-4 bg-body-tertiary rounded-3">
+          <div class="container-fluid py-2">
+            <h1 class="d-flex justify-content-center border-bottom">Listado de Helados</h1>
+            <div class="tabla">
+              <app-lista-helados (heladoElegido)="heladoSeleccionado($event)"></app-lista-helados>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row align-items-md-stretch">
+  
+          <div class="col-md-4">
+            <div class="p-3 text-bg-dark rounded-3">
+              <h3>Crear Helado</h3>
+              <app-crea-helado (heladoCreado)="crearHelado($event)"></app-crea-helado>
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="p-3 text-bg-dark rounded-3">
+              <h3>Modificar Helado</h3>
+              <app-modifica-helado [heladoElegido]="helado"></app-modifica-helado>
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="p-3 text-bg-dark rounded-3">
+              <h3>Borrar Helado</h3>
+              <app-borra-helado [heladoElegido]="helado"></app-borra-helado>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </main>
+  </body>

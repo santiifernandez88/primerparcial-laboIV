@@ -10,10 +10,16 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" [routerLink]="['/heladoshome']">Helados</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" [routerLink]="['/altaRepartidor']">Alta repartidor</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Repartidores
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/altaRepartidor']" routerLinkActive="router-link-active" >Alta repartidor</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/repartidorhome']">Detalle repartidor</a></li>
+            </ul>
           </li>
         </ul>
         @if(this.auth.getUser() == null)

@@ -1,0 +1,9 @@
+<div *ngIf="heladoElegido == undefined" class="d-flex justify-content-center">
+    <h4>No seleccionó ningun helado!</h4>
+  </div>
+  <div *ngIf="heladoElegido != undefined">
+    <p>Nombre de Pizza: {{heladoElegido.nombre}}</p>
+    <div class="d-grid gap-2 col-8 mx-auto">
+      <button type="submit" class="btn btn-primary" (click)="borrarHelado()">Borrar Helado</button>
+    </div><br><br>
+  </div>

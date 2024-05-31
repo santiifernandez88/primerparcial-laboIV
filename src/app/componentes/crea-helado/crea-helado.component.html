@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="crearHelado()" class="formulario container-fluid">
+
+    <div class="form-floating form-control-group p-2" >
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      <label class="form-label" for="nombre">Nombre</label>
+    </div>
+  
+    <div class="form-floating form-control-group p-2" >
+      <input type="text" class="form-control" id="precio" formControlName="precio">
+      <label class="form-label" for="precio">Precio</label>
+    </div>
+  
+    <div class="form-floating form-control-group p-2" >
+      <input type="text" class="form-control" id="peso" formControlName="peso">
+      <label class="form-label" for="peso">Peso</label>
+    </div>
+  
+    <div class="form-floating form-control-group p-2" >
+      <input type="text" class="form-control" id="ingredientes" formControlName="tipo">
+      <label class="form-label" for="ingredientes">Tipo</label>
+    </div>
+  
+    <div class="d-grid gap-2 col-8 mx-auto">
+      <button type="submit" class="btn btn-primary">Guardar Helado</button>
+    </div><br><br>
+  
+    <p *ngIf="mensajeExito != undefined" class="alert alert-success mb-auto">{{mensajeExito}}</p>
+    <p *ngIf="mensajeError != undefined" class="alert alert-danger mb-auto">{{mensajeError}}</p>
+  
+  </form>

@@ -1,0 +1,9 @@
+<div *ngIf="paisDetalle == undefined" class="d-flex justify-content-center">
+    <h4>No seleccionó ningun repartidor!</h4>
+</div>
+<div *ngIf="paisDetalle != undefined && paisElegido != undefined">
+    <p></p>
+    <p>Pais: {{paisElegido.nombre}}</p>
+    <p>Denominación: {{paisElegido.denominacion}}</p>
+    <p>Bandera: <img src="{{paisElegido.bandera}}" alt="bandera" height="100px"></p>
+</div>

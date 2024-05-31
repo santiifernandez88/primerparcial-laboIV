@@ -24,5 +24,21 @@ export const routes: Routes = [
         ),
       title: 'Alta repartidor',
       canActivate: [logeadoGuard]
-    }
+    },
+    { path: 'repartidorhome',
+      loadComponent: () => 
+      import('./componentes/repartidorhome/repartidorhome.component').then(
+          (c) => c.RepartidorhomeComponent
+      ),
+      title: 'Detalle repartidor',
+      canActivate: [logeadoGuard]
+    },
+    { path: 'heladoshome',
+      loadComponent: () => 
+      import('./componentes/heladoshome/heladoshome.component').then(
+          (c) => c.HeladoshomeComponent
+      ),
+      title: 'Salen helados',
+      canActivate: [logeadoGuard]
+    },
 ];

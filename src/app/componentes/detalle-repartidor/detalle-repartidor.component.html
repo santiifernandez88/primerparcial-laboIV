@@ -1,0 +1,12 @@
+<div *ngIf="repartidorDetalle == undefined" class="d-flex justify-content-center">
+    <h4>No seleccionó ningun repartidor!</h4>
+  </div>
+  <div *ngIf="repartidorDetalle != undefined">
+    <p>Nombre: {{repartidorDetalle.nombre}}</p>
+    <p>DNI: {{repartidorDetalle.dni}}</p>
+    <p>Edad: {{repartidorDetalle.edad}}</p>
+    <p>Capacidad de Transporte: {{repartidorDetalle.capTransporte}}</p>
+    <p *ngIf="repartidorDetalle.unidadPropia == 'true'">Unidad Propia: Si</p>
+    <p *ngIf="repartidorDetalle.unidadPropia == 'false'">Unidad Propia: No</p>
+    <p>Pais de Origen: {{repartidorDetalle.pais}}</p>
+  </div>
